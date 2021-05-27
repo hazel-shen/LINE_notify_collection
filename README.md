@@ -10,6 +10,7 @@ ansible-galaxy collection install hazel_shen.line_notify  --ignore-certs
 
 ## How to use this collection
 
+Download collection from [Ansible Galaxy](https://galaxy.ansible.com/hazel_shen/line_notify) 
 ```
 # Download Ansible collection
 ansible-galaxy collection install hazel_shen.line_notify
@@ -30,10 +31,8 @@ The following is example playbook:
 ## How to use on Ansible Tower 
 
 Your project tree should be like this:
-.
-├── collections
-│   └── requirements.yml
-└── line_notify_playbook.yml
+
+![line_notify_tree](https://raw.githubusercontent.com/hazel-shen/Image_Repo/main/line_notify_tree.jpg)
 
 Please put these code into `requirements.yml`:
 ```
@@ -41,5 +40,11 @@ Please put these code into `requirements.yml`:
 collections:
 - hazel_shen.line_notify
 ```
+
+Ansible Tower will download collection automatically when you execute the playbook with collection requirement.
+
+## Use case - Notify someone when things go wrong :'(
+
+![Ansible Tower Workflow](https://raw.githubusercontent.com/hazel-shen/Image_Repo/main/line_notify_use_case.jpg)
 
 ## How to develop
