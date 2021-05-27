@@ -8,10 +8,10 @@ def main():
     module = AnsibleModule(
         argument_spec={
             'access_token': {'required': True},
-            'message': {'required': True},
+            'message_content': {'required': True},
         }
     )
-    response = send_notify(module.params['access_token'], module.params['message'])
+    response = send_notify(module.params['access_token'], module.params['message_content'])
     module.exit_json(changed=False, meta=json.loads(response.text))
    
 def send_notify(access_token, message_content):
@@ -21,8 +21,8 @@ def send_notify(access_token, message_content):
     
     
 def format_message(message_content):
-    message = {'message': message_content}
-    return message
+    formated_message = {'message': message_content}
+    return formated_message
 
 if __name__ == "__main__":
       main()
